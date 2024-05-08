@@ -1,0 +1,7 @@
+- Deconstructors 
+Similarly, you can destructure objects on the left-hand side of the assignment.
+const obj = { a: 1, b: 2 };
+const { a, b } = obj;
+// is equivalent to:
+// const a = obj.a;
+// const b = obj.b;

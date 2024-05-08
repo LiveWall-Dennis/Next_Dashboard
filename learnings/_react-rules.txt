@@ -1,0 +1,11 @@
+React: A declarative UI library
+
+- Imperative vs. declarative programming
+imperative programming is like giving a chef step-by-step instructions on how to make a pizza.
+ Declarative programming is like ordering a pizza without being concerned about the steps it takes to make the pizza.
+
+- JSX is a syntax extension for JavaScript that allows you to describe your UI in a familiar HTML-like syntax.
+
+- In React, event names are camelCased
+
+- In React, data flows down the component tree. This is referred to as one-way data flow. State, which will be discussed in the next chapter, can be passed from parent to child components as props

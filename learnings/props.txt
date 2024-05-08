@@ -1,0 +1,10 @@
+- Props
+
+export default LikeButton(props) {
+    const text = props.text;
+    return <div class="like-button">{text}</div>
+}
+
+export default LikeButton({text}) {
+    return <div class="like-button">{text}</div>
+}
