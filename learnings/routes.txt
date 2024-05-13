@@ -1,0 +1,60 @@
+Next.js uses file-system routing where folders are used to create nested routes. Each folder represents a route segment that maps to a URL segment.
+
+website.com/dashboard/invoices = 
+app
+    - dashboard
+        + layout.tsx ---> This will be shared with all the dashboard children pages
+        - invoices
+            + page.tsx
+
+----------------
+
+- page.tsx
+
+export default function Page() {
+    return <p>Dashboard Page</p>;
+}
+
+
+- layout.tsx
+
+import SideNav from '@/app/ui/dashboard/sidenav';
+ 
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
+      <div className="w-full flex-none md:w-64">
+        <SideNav />
+      </div>
+      <div className="flex-grow p-6 md:overflow-y-auto md:p-12">{children}</div>
+    </div>
+  );
+}
+
+- The layout in the /app folder is called root layout and is required,
+You can use the root layout to modify your <html> and <body> tags, and add metadata
+
+/app/layout.tsx
+
+import '@/app/ui/global.css';
+import { inter } from '@/app/ui/fonts';
+ 
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body className={`${inter.className} antialiased`}>{children}</body>
+    </html>
+  );
+}
+
+
+---------------
+
+By having a special name for page files, Next.js allows you to colocate UI components, test files, and other related code with your routes.
+Only the content inside the page file will be publicly accessible. For example, the /ui and /lib folders are colocated inside the /app folder along with your routes.
+
+-----------

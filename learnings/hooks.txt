@@ -1,0 +1,6 @@
+- Hooks (https://react.dev/reference/rules/rules-of-hooks) 
+Hooks allow you to add additional logic such as state to your components
+Functions whose names start with use are called Hooks in React.
+Don’t call Hooks inside loops, conditions, nested functions, 
+or try/catch/finally blocks. Instead, always use Hooks at the top level of your React function,
+before any early returns. You can only call Hooks while React is rendering a function component:

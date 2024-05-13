@@ -1,0 +1,26 @@
+- State (https://react.dev/learn/state-a-components-memory)
+Components often need to change what’s on the screen as a result of an interaction. 
+Typing into the form should update the input field, clicking “next” on an image carousel 
+should change which image is displayed, clicking “buy” should put a product in the shopping cart. 
+Components need to “remember” things: the current input value, the current image, the shopping cart.
+In React, this kind of component-specific memory is called state.
+
+State is local to a component instance on the screen. In other words, if you render the same component 
+twice, each copy will have completely isolated state! Changing one of them will not affect the other.
+
+- State is a snapshot, it doesn't update immediately, it's async. To get the updated value,
+use the function to update it, like: setLikes(like => like + 1)
+
+function HomePage() {
+  const [likes, setLikes] = React.useState(0); // [saved variable, function to update it]
+ 
+  function handleClick() {
+    setLikes(likes + 1);
+  }
+ 
+  return (
+    <div>
+      <button onClick={handleClick}>Likes ({likes})</button>
+    </div>
+  );
+}

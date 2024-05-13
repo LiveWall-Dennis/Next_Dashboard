@@ -1,0 +1,13 @@
+- Loop through objects with .map()
+
+function HomePage() {
+  const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+ 
+  return (
+      <ul>
+        {names.map((name) => (
+          <li key={name}>{name}</li>
+        ))}
+      </ul>
+  );
+}
